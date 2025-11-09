@@ -1,0 +1,120 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
+  <a class="navbar-brand" href="index.html"><img src="/assets/img/Logo-Conalfa_Full.png" alt="" width="90" height="36"></a>
+  <button id="boton" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >
+    <span  class="navbar-toggler-icon"></span>
+  </button>
+     
+  
+
+  <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-right: 30px; max-width: 100%;" >
+     
+      
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" >
+       
+    
+    <!--<li id="profesor_vocales" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing" >
+            <a class="nav-link"  routerLink ="vocals/vocal_list" >  
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > VOCALES</span>
+            </a>
+        </li>
+
+          <li id="profesor_consonantes" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing" >
+              <a class="nav-link"  routerLink ="consonants/consonant_list" >  
+                  <i class="fa fa-pencil"></i>
+                  <span class="nav-link-text" > CONSONANTES</span>
+              </a>
+          </li>-->
+
+          
+
+        <li id="profesor_silabas" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="syllables/syllable_list" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > SILABAS </span>
+            </a>
+        </li>
+
+          <li id="profesor_palabras" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+              <a class="nav-link" routerLink ="words/word_list" >
+                  <i class="fa fa-pencil"></i>
+                  <span class="nav-link-text" > PALABRAS </span>
+              </a>
+          </li>
+
+          <li id="profesor_frases" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="phrases/phrase_list" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > FRASES </span>
+            </a>
+        </li>
+
+        
+          <li id="reportes" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="reports" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > REPORTES </span>
+            </a>
+        </li>
+
+        <li id="reiniciartareas" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="reiniciartareas" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > REINICIAR TAREAS </span>
+            </a>
+        </li>
+          
+        <!--<li id="alumnos" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="words/alumnos" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > NUEVO ALUMNO </span>
+            </a>
+        </li>
+
+        <li id="profesores" class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing + Menu List" >
+            <a class="nav-link" routerLink ="admin/createuser" >
+                <i class="fa fa-pencil"></i>
+                <span class="nav-link-text" > NUEVO ALFABETIZADOR </span>
+            </a>
+        </li>-->
+        
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+              <a class="nav-link text-center" id="sidenavToggler">
+                  <i class="fa fa-fw fa-angle-left"></i>
+              </a>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+          
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out"></i>Salir</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+<!-- /Navigation-->
+
+
+<!-- Logout Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Desea cerrar sesion?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body">Seleccione "Cerrar sesión" si desea terminar la sesion actual.</div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" data-dismiss="modal" (click)="clean()" >Cerrar sesion</a>
+        </div>
+    </div>
+</div>
+</div> 

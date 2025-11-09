@@ -1,0 +1,118 @@
+<!-- /Navigation-->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" style="margin-left: 25px;">
+                <a href="#">Sección de tareas</a>
+            </li>
+            <li class="breadcrumb-item active">Ejercicios</li>
+        </ol>
+
+
+
+        <div class="box_general padding_bottom" >
+
+          <!--GIF PARA LA CARGA DE DATOS, SE MUESTRA MIENTRAS SE CARGAN LOS DATOS EN EL CONSTRUCTOR-->
+          
+          <div  *ngIf="loading_gif == true" style="text-align: center;">
+            <img  src="assets/img/loading.gif" id="imagen_formulario2"
+                style="max-width: 100px; position:absolute; margin-left: -50px;">                           
+        </div>
+          
+        
+            <!--CATEGORIAS------------------se muestra el listado de las categorias que existen-->
+            <div class="box_general" style="text-align: center;">
+
+
+                <!--SI NO HAY RESULTADOS SE MUESTRA EL SIGUIENTE PARRAFO-->
+                
+
+                  
+                            <div class="list_general" *ngFor="let task of task_items ; let i = index">
+
+
+                                <!--------------------------------------------------------------------------->
+                                <div class="row" >
+                                    
+                               
+                                    <div class="form-group">
+                                        <label>{{task.task_text}}</label>
+                                    </div>
+                
+                                    <div class="form-group" *ngIf="task.type == 'v' ">
+                                        PRONUNCIAR <label>{{task.sound_text}}</label>
+                                    </div>
+                                
+                                   
+                                        <div class="form-group" >
+                
+                                                <figure>
+                                                    <img  src=  "{{task.image}}" id="imagen_formulario2"
+                                                        style="max-width: 175px;" > 
+                                                        
+                                                        &nbsp;  
+                                                </figure>
+                                    
+                                        </div>
+                                    
+                                    <br>
+
+                                    <div class="form-group" style="text-align: center;">
+                                            
+                                        <!--<a class="btn_1 gray approve" data-toggle="modal" data-target="#gallery_modal" ><i
+                                                class="fa fa-microphone" (click)="toggleListening()" ></i> Pronunciar ejercicio</a>-->
+
+                                                
+                                                
+                                                  <br>
+                                                  <p style = "color: #333; font-size: 19px;" *ngIf="transcript" > <strong> DIGISTE: {{ transcript }} </strong></p>
+                                                  <br>
+
+                                                  <button class="btn_1 green approve"  (click)="toggleListening(task.leter_id,task.profesor_id,task.type,task.task_text,task.syllable_word_id)">
+                                                    {{ speechRecognitionService.isListening ? 'Detener' : 'Comenzar' }} Escucha
+                                                  </button>
+                               
+                                                </div>
+                          
+                                
+                              </div>
+
+                                <!--------------------------------------------------------------------------->
+
+                                
+                                <div  *ngIf="( estado_escucha == true)" >
+                
+                                    <div class="form-group" style="text-align: center;">
+            
+                                            <figure>
+                                                <img  src=  "/assets/img/microfono_habla.gif" id="imagen_formulario2"
+                                                    style="max-width: 175px;" > 
+                                                    
+                                                    &nbsp;  
+                                            </figure>
+                                
+                                    </div>
+                                </div>
+
+                                 
+                                
+                            </div>
+                        
+                        
+
+            </div>       
+        
+     
+<!-- /pagination-->  
+
+    </div>    
+    <!-- /.container-fluid-->
+</div>
+<!-- /.container-wrapper-->
+
+
+
+</div>
+
+            

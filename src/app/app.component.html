@@ -1,0 +1,33 @@
+<!--MOSTRAR EL COMPONENTE DE NAVEGACION, LLAMA AL HTML DEL COMPONENTE DE NAVEGACION-->
+<div *ngIf="( tokenvalue === '')">
+    <app-loginuser style="background-color: rgb(173, 107, 26);"></app-loginuser>      
+</div>
+
+<div *ngIf="( tokenvalue !== '')"> 
+
+     <app-footer-comp></app-footer-comp>
+       
+       
+        <app-navigation-student *ngIf="(rolname === 'a')"></app-navigation-student>
+        
+            <app-navigation-profesor *ngIf="(rolname === 'p')" ></app-navigation-profesor> 
+
+            <app-navigation-coordinator *ngIf="(rolname === 'c')" ></app-navigation-coordinator> 
+      
+    <div class="container p-4">
+        <router-outlet ></router-outlet>
+        <!--LLAMAMOS AL FOOTER, QUE ESTA EN EL COMPONENTE footer-comp-->
+        <app-footer-comp></app-footer-comp>
+    
+        <!--_______________________________LISTADO DE MODALES__________________________________-->
+      
+        <!--<app-gallerycomp></app-gallerycomp> -->
+        <!--modal para detalle de orden, se llama desde el listado de ordenes-->   
+        
+        <!--______________________________FIN LISTADO DE MODALES_________________________________-->
+        
+       </div>
+       
+    </div>
+    
+    

@@ -1,0 +1,110 @@
+
+
+
+	
+	
+	<main class="bg_gray pattern" style=" position: relative;">
+
+		
+
+
+
+		
+		<div class="container margin_60_40" style=" position: absolute; top: 50%; left: 50%; height: 30%; width: 60%; margin: 7% 0 0 -30%; " >
+		    <div class="row justify-content-center" style="background-color: rgb(244, 248, 252); border-radius: 0.7em;">
+
+				
+
+		        <div class="col-lg-4">
+
+		        	<div class="sign_up" style="text-align: center;"> 
+		                <div class="head">
+		                    <div class="title" >
+								<div class="header_box version_2">
+									<h2><i  class="fa fa-user"></i>Iniciar sesion</h2>
+								</div>
+		                    
+		                </div>
+		                </div>
+		                <!-- /head -->
+		                <div class="main">
+							
+							<!--<a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook" src="https://lh6.googleusercontent.com/-CYt37hfDnQ8/T3nNydojf_I/AAAAAAAAAr0/P5OtlZxV4rk/s32/facebook32.png" width=32 height=32  /></a>
+
+							<button  class="fb_button">Iniciar con Facebook</button>
+							
+							<hr>
+		                	
+							<a rel="author" href="https://plus.google.com/TU_ID_GOOGLE?rel=author" target="_blank"><img alt="Siguenos en Google+" src="https://lh5.googleusercontent.com/-F_FBKktZWZk/T3nN0v4FeAI/AAAAAAAAAsc/7dHTxkxn4cI/s32/google32.png" width=32 height=32  /></a>
+
+							<button class="goo_button" (click)="login_account('google')">Iniciar con Google</button>
+							<br>-->
+
+							
+		                	<h6>Ingresar credenciales</h6>
+		                	<!--<div class="form-group">
+		            			<div >
+									<div class="form-group">
+										<label>Usuario</label>
+										<input type="email" class="form-control" (keyup.enter)="login_account()" routerLink="/dishes/orders_list" placeholder="Ingrese su usuario">
+									</div>
+								</div>
+		            			<i class="icon_pencil"></i>
+		            		</div>-->
+		            		
+							<mat-form-field class="example-full-width" [style.width.px]=230 >
+								<mat-label>Ingrese su usuario</mat-label>
+
+								<input matInput   (keyup.enter)="login_validate_access()"  [(ngModel)]="Userdata.user_name" required >								 
+							
+							</mat-form-field>
+							  
+							<div class="example-container">
+
+								<mat-form-field [style.width.px]=230>
+
+								  <mat-label>Ingrese su contraseña</mat-label>
+								  <input matInput [type]="hide ? 'password' : 'text'" (keyup.enter)="login_validate_access()"  [(ngModel)]="Userdata.user_pass" required>
+								  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+									<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+								  </button>
+								</mat-form-field>
+
+
+
+									<button class="btn btn-primary btn-block" (click)="login_validate_access()" [disabled]="loading" >{{(loading) ? 'Autenticando...' : 'INGRESAR'}}</button>
+								
+							  
+							</div>
+
+							
+								
+						
+
+							<!--<a (click)="login_account()" [disabled]="isLoading$" routerLink="/dishes/orders_list" class="btn_1 full-width mb_5">INGRESAR</a>-->
+							
+						    
+
+							<hr style="  border-color: rgb(39, 43, 77); ">
+							<app-spinner></app-spinner>
+		                </div>
+		            </div>
+		            <!-- /box_booking -->
+		        </div>
+		        <!-- /col -->
+
+
+
+				
+
+		    </div>
+		    <!-- /row -->
+		</div>
+		<!-- /container -->
+		
+	</main>
+	<!-- /main -->
+
+	
+
+	

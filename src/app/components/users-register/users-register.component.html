@@ -1,0 +1,204 @@
+<div class="content-wrapper">
+
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" style="margin-left: 25px;">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Crear Usuario</li>
+        </ol>
+
+
+
+
+        <div class="box_general padding_bottom">
+
+            <!--INICIO-->
+            <!--<div class="box_general padding_bottom">-->
+            
+            <div class="header_box version_2">
+                <h2><i class="fa fa-file"></i>Ingrese los datos y credenciales del usuario</h2>
+            </div>
+            
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+             <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <input type="text" class="form-control" placeholder="Ingrese los nombres del usuario"
+                            formControlName="nombres">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" placeholder="Ingrese los apellidos del usuario"
+                            formControlName="apellidos">
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" class="form-control" placeholder="Ingrese el usuario elegido"
+                            formControlName="user_name">
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input    [type]="hidePassword ? 'password' : 'text'"
+                        formControlName="password"
+                        
+                        class="password-input" class="form-control" placeholder="Ingrese contraseña elegida">
+                      
+                        <button type="button" (click)="togglePassword()" class="toggle-btn">
+
+                        <span *ngIf="hidePassword">👁️</span>
+                        <span *ngIf="!hidePassword">🙈</span>
+                        </button>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label  for="opcion">Selecciona el tipo de rol</label>
+                      <select formControlName="rol_name" id="opcion" class="form-control" aria-placeholder="Rol del usuario" (change) ="rol_seleccionado($event)">
+                        <option value="" disabled selected>-- Selecciona el rol del usuario --</option> 
+                        <option *ngFor="let opcion of opciones_roles" [value]="opcion.valor" class="form-control" >
+                          {{ opcion.nombre }}
+                         </option>
+                     </select>
+                    </div>
+                </div>
+
+                
+                <!--<div class="col-md-6" *ngIf = "rolname === 'p' || rolname === 'a' ">-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label  for="area">Seleccione el area</label>
+                       <select formControlName="area_name" id="area_value" class="form-control" aria-placeholder="Nombre del area" (change) ="area_seleccionada($event)">
+                        <option value="" disabled selected>-- Selecciona un area --</option> 
+                        <option  *ngFor="let area of area_items"  [value]="area.area_name" class="form-control" >
+                          {{ area.area_name }}
+                         </option>
+                     </select>
+                    </div>
+                </div>
+
+                
+                
+                <!--<div class="col-md-6" *ngIf = "user_ins.rol_name === 'a'">
+                    <div class="form-group">
+                    <label  for="opcion" >Selecciona el alfabetizador</label>
+                      <select formControlName="rol_name" id="opcion" class="form-control">
+                         <option *ngFor="let opcion of opciones" [value]="opcion.valor" class="form-control" >
+                          {{ opcion.nombre }}
+                         </option>
+                     </select>
+
+                 
+                    </div>
+                </div>-->
+
+                   
+                <div class="col-md-6" *ngIf = "isAdminWithArea">
+                
+                    <div class="form-group">
+                    <label  for="alfab">Seleccione el alfabetizador(a)</label>
+                    
+                    <select id="opcion_profesor" class="form-control" (change)="profesor_seleccionado($event)">
+                     <option value="" disabled selected>-- Selecciona un alfabetizador --</option>
+                     <option *ngFor="let profesor of profesor_items" [value]="profesor.user_rol_id">
+                      {{ profesor.nombres }} {{ profesor.apellidos }}
+                     </option>
+
+                    </select>
+                 
+                    </div>
+                </div>
+
+
+            </div>
+
+
+             <button type="submit">Enviar</button>
+           
+            </form>
+
+            <!--</div>-->
+
+
+            <!--INICIO-->
+            <!--<div class="box_general padding_bottom">-->
+                
+      
+
+                <p></p>
+
+
+           
+            <br>
+
+                    
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+ 
+     
+
+
+<!--<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre">
+  </div>
+
+<br>
+
+<div class="password-wrapper">
+  <input
+    [type]="hidePassword ? 'password' : 'text'"
+    formControlName="password"
+    placeholder="Contraseña"
+    class="password-input"
+  />
+  <button type="button" (click)="togglePassword()" class="toggle-btn">
+    <span *ngIf="hidePassword">👁️</span>
+    <span *ngIf="!hidePassword">🙈</span>
+  </button>
+</div>
+
+
+<br>
+  <button type="submit">Enviar</button>
+  <br>
+<br>
+<br>
+<br>
+
+
+</form>-->
+
+
+ 
+
+

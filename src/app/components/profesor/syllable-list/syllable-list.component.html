@@ -1,0 +1,95 @@
+<!-- /Navigation-->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" style="margin-left: 25px;">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">SILABAS</li>
+        </ol>
+
+
+
+        <div class="box_general padding_bottom" >
+
+          <!--GIF PARA LA CARGA DE DATOS, SE MUESTRA MIENTRAS SE CARGAN LOS DATOS EN EL CONSTRUCTOR-->
+          
+          <div  *ngIf="loading_gif == true" style="text-align: center;">
+            <img  src=  "assets/img/loading.gif" id="imagen_formulario2"
+                style="max-width: 100px; position:absolute; margin-left: -50px;">                           
+        </div>
+          
+
+
+            <!--CATEGORIAS------------------se muestra el listado de las categorias que existen-->
+            <div class="box_general" style="text-align: center;">
+
+
+                            <div class="list_general" *ngFor="let syllable of syllable_items ; let i = index" style="background-color: white;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            padding: 16px;
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
+
+<!--------------------------------------------------------------------------->
+<div *ngIf="syllable.enable == true"  class="row" >
+
+    <div class="form-group">
+        <label> {{syllable.word_text}} </label>
+    </div>
+
+
+
+
+    
+        <div class="form-group" style="text-align: center;">
+
+                <figure>
+                    <img  src=  "{{syllable.image_text}}" id="imagen_formulario2"
+                        style="max-width: 175px;" > 
+
+                 <!---->       
+                 <a  *ngIf="rolname === 'c' " class="btn_1 gray delete"  style="font-size:x-small; color:rgb(157, 187, 194); position:absolute; text-align: right;" (click)="confirmar_disable(syllable.syllable_word_id)"><i
+                class="fa fa-fw fa-remove"></i></a> 
+                        
+                        &nbsp;  
+                </figure>
+
+               
+    
+        </div>
+    
+    <br>
+
+
+    <div *ngIf="rolname === 'p' "  class="form-group" style="text-align: center;">
+            
+        <button class="btn_1 green approve"  (click)="conectarsocket(syllable.word_text,syllable.image_text,syllable.syllable_word_id,syllable.type,syllable.syllable_word_id)">
+            Asignar tarea
+          </button> 
+    </div>
+
+  
+</div>
+
+
+<!--------------------------------------------------------------------------->
+
+                                 
+                                
+                            </div>
+                                        
+
+            </div>       
+        
+      
+
+    </div>    
+    <!-- /.container-fluid-->
+</div>
+<!-- /.container-wrapper-->
+
+
+
+</div>

@@ -1,0 +1,91 @@
+<!-- /Navigation-->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" style="margin-left: 25px;">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">VOCALES</li>
+        </ol>
+
+
+
+        <div class="box_general padding_bottom">
+
+          <!--GIF PARA LA CARGA DE DATOS, SE MUESTRA MIENTRAS SE CARGAN LOS DATOS EN EL CONSTRUCTOR-->
+          
+          <div  *ngIf="loading_gif == true" style="text-align: center;">
+            <img  src=  "assets/img/loading.gif" id="imagen_formulario2"
+                style="max-width: 100px; position:absolute; margin-left: -50px;">                           
+        </div>
+          
+            <!--/ categories pagination-->
+
+
+            <!--CATEGORIAS------------------se muestra el listado de las categorias que existen-->
+            <div class="box_general">
+
+
+                <!--SI NO HAY RESULTADOS SE MUESTRA EL SIGUIENTE PARRAFO-->
+                
+
+                  
+                            <div class="list_general" style="text-align: center;">
+
+<!--------------------------------------------------------------------------->
+<div class="row" *ngFor="let vowels of vowel_items ; let i = index">
+    <div class="form-group">
+        <label>{{vowels.mayus_text}}  {{vowels.letter_text}}</label>
+    </div>
+
+    <div class="form-group">
+        TEXTO A PRONUNCIAR:  <label>{{vowels.sound_text}}</label>
+    </div>
+
+        <div class="form-group" style="text-align: center;">
+
+                <figure>
+                    <img  src=  "{{vowels.image_text}}" id="imagen_formulario2"
+                        style="max-width: 175px;" > 
+                        
+                        &nbsp;  
+                </figure>
+    
+        </div>
+    
+    <br>
+
+    
+    <div class="form-group" style="text-align: center;">
+            
+        <a class="btn_1 gray approve"  data-toggle="modal" data-target="#gallery_modal" ><i
+                class="fa fa-fw fa-check-circle-o" ></i> Asignar tarea</a>
+    </div>
+
+    <hr>
+</div>
+
+<!--------------------------------------------------------------------------->
+
+                                 
+                                
+                            </div>
+                        
+                        
+
+            </div>       
+        
+      
+ 
+
+    </div>    
+    <!-- /.container-fluid-->
+</div>
+<!-- /.container-wrapper-->
+
+
+
+</div>
+
+ 
