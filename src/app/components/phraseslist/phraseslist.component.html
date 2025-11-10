@@ -30,14 +30,15 @@
                 
 
                   
-                            <div class="list_general" *ngFor="let phrase of phrase_items ; let i = index" style="background-color: white;
-                            border: 1px solid #ddd;
-                            border-radius: 8px;
-                            padding: 16px;
-                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
+                         
 
 <!--------------------------------------------------------------------------->
-<div *ngIf="phrase.enable == true"  class="row" >
+<div style="background-color: white;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            padding: 11px;
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"
+                             *ngFor="let phrase of phrase_items ; let i = index" class="row" >
 
     <div class="form-group">
         <label> {{phrase.word_text}} </label>
@@ -78,7 +79,7 @@
 
                                  
                                 
-                            </div>
+                          
                                         
 
             </div>       
