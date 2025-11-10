@@ -30,10 +30,10 @@
                 
 
                   
-                            <div class="list_general" *ngFor="let words of word_items ; let i = index" >
+                           
 
 <!--------------------------------------------------------------------------->
-<div *ngIf="words.enable == true"  class="row" style="background-color: white;
+<div  *ngFor="let words of word_items ; let i = index" class="row" style="background-color: white;
                          
                             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
     <div class="form-group">
@@ -71,10 +71,7 @@
 
 <!--------------------------------------------------------------------------->
 
-                                 
-                                
-                            </div>
-                        
+                       
                         
 
             </div>       
