@@ -25,15 +25,10 @@
             <!--CATEGORIAS------------------se muestra el listado de las categorias que existen-->
             <div class="box_general" style="text-align: center;">
 
-
-                            <div class="list_general" *ngFor="let syllable of syllable_items ; let i = index" style="background-color: white;
-                            border: 1px solid #ddd;
-                            border-radius: 8px;
-                            padding: 16px;
-                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
-
 <!--------------------------------------------------------------------------->
-<div *ngIf="syllable.enable == true"  class="row" >
+<div *ngFor="let syllable of syllable_items ; let i = index"   class="row" style="background-color: white;
+                           
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);" >
 
     <div class="form-group">
         <label> {{syllable.word_text}} </label>
@@ -76,9 +71,7 @@
 
 <!--------------------------------------------------------------------------->
 
-                                 
-                                
-                            </div>
+                   
                                         
 
             </div>       
