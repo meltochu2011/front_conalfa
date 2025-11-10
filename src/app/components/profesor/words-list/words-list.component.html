@@ -30,14 +30,12 @@
                 
 
                   
-                            <div class="list_general" *ngFor="let words of word_items ; let i = index" style="background-color: white;
-                            border: 1px solid #ddd;
-                            border-radius: 8px;
-                            padding: 16px;
-                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
+                            <div class="list_general" *ngFor="let words of word_items ; let i = index" >
 
 <!--------------------------------------------------------------------------->
-<div *ngIf="words.enable == true"  class="row" >
+<div *ngIf="words.enable == true"  class="row" style="background-color: white;
+                         
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);">
     <div class="form-group">
         <label>{{words.word_text}} </label>
       
